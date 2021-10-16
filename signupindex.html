@@ -45,10 +45,29 @@
     <link href="css/signup.css" rel="stylesheet">
   </head>
   <body class="text-center">
+
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" style ="display:block">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">Pixels Weather</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                  aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse " id="navbarCollapse">
+                  <ul class="navbar-nav ms-auto mb-2 mb-md-0">
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="https://afternoon-citadel-01298.herokuapp.com">Home</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+  </header>
     
-<main class="form-signin">
+<main class="form-signin" style="margin-top: 150px;">
   <form action="/signup" method="post">
-    <img class="mb-4" src="images/picture.png" alt="" width="72" height="57">
+    <img class="mb-4" src="images/efe182369fce569fbac60302c69acc5f.jpg" alt="No logo" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">SignUp to Newsletter</h1>
 
       <input type="text" class="form-control" placeholder="Frst Name" name="fname" required autofocus>
