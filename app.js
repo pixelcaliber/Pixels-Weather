@@ -1,5 +1,7 @@
 const express = require('express');
 const app = express();
+app.set('view engine', 'ejs');
+
 const https = require('https');
 const request = require('request');
 
@@ -15,17 +17,13 @@ app.get("/signup", function (req, res){
     res.sendFile(__dirname + "/signupindex.html");
 
 });
-
 //newsletter..
-
 app.post("/signup", function (req, res) {
     console.log(req.body);
 
     var firstname = req.body.fname;
     var lastname = req.body.lname;
     var email = req.body.ename;
-    // res.send("user has entered " + req.body.fname + " " + req.body.lname + " " + req.body.ename);
-
     var data = {
         members: [{
             email_address: email,
@@ -44,10 +42,6 @@ app.post("/signup", function (req, res) {
     }
     const request = https.request(url, option, function (response) {
         console.log(response.statusCode);
-
-        // if (response.statusCode < 200 || response.statusCode >= 300) {
-        //     return reject(new Error('statusCode=' + response.statusCode));
-        // }
 
         if (response.statusCode === 200) {
             res.sendFile(__dirname + "/success.html");
@@ -85,10 +79,35 @@ app.post('/', function (req, res){
             console.log(imageurl)
             const weatherdesc = weatherdata.weather[0].description
             console.log(weatherdesc)
-            res.write("<h1>Temperature in " + name + " is " + temp + " degrees</h1>")
-            res.write("<p>Weather desciption is " + weatherdesc + ".</p>")
-            res.write("<img src = " + imageurl + ">")
-            res.send();
+
+            var today = new Date();
+            var crr_day = today.getDay();
+            var crr_date = today.getDate();
+            var crr_year = today.getFullYear();
+            var month = today.getMonth() + 1;
+            var day = "";
+            if (crr_day === 6 || crr_day === 0) {
+                day = "Weekend";
+            }
+            else {
+                day = "Weekday";
+            }
+            res.render("lists", 
+            {
+                kindofday: day,
+                temperature: temp,
+                nameofcity: name,
+                wdescription: weatherdesc,
+                imagelink: imageurl,
+                monthname: month,
+                year : crr_year,
+                date: crr_date
+            });
+
+            // res.write("<h1>Temperature in " + name + " is " + temp + " degrees</h1>")
+            // res.write("<p>Weather desciption is " + weatherdesc + ".</p>")
+            // res.write("<img src = " + imageurl + ">")
+            // res.send();
         })
     })
 });
