@@ -1,4 +1,4 @@
-# project1.0 :
+# Pixels Weather
 ## https://afternoon-citadel-01298.herokuapp.com/
 
 💻 Tech-stack : Node.js Express EJS Javascript 
