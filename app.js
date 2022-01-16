@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+require('dotenv').config();
 app.set('view engine', 'ejs');
 
 const https = require('https');
@@ -38,7 +39,7 @@ app.post("/signup", function (req, res) {
     const url = "https://us5.api.mailchimp.com/3.0/lists/5cd2749880"
     const option = {
         method: "POST",
-        auth: "abhi:3d670fb80d63150e989a47b0384a44fa-us5"
+        auth: process.env.MY_VARIABLE
     }
     const request = https.request(url, option, function (response) {
         console.log(response.statusCode);
