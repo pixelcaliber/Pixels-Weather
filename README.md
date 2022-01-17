@@ -3,5 +3,5 @@
 
 💻 Tech-stack : Node.js Express EJS Javascript 
 
-Hosted on heroku and uses Mailchimp for newsletter services
+Hosted on heroku, uses Mailchimp for newsletter service
 
