@@ -88,7 +88,7 @@ app.post('/', function (req, res){
             var month = today.getMonth() + 1;
             var day = "";
             if (crr_day === 6 || crr_day === 0) {
-                day = "Weekend";
+                day = "Weekend / Holiday";
             }
             else {
                 day = "Weekday";
@@ -104,7 +104,7 @@ app.post('/', function (req, res){
                 year : crr_year,
                 date: crr_date
             });
-
+            //commments..
             // res.write("<h1>Temperature in " + name + " is " + temp + " degrees</h1>")
             // res.write("<p>Weather desciption is " + weatherdesc + ".</p>")
             // res.write("<img src = " + imageurl + ">")
@@ -117,5 +117,5 @@ app.post("/failure.html", function(req, res){
 });
 
 app.listen(process.env.PORT || 3000, function () {
-    console.log("HI");
+    console.log("Site is running");
 });
