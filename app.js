@@ -115,10 +115,10 @@ app.post('/', function (req, res){
                 date: crr_date
             });
             //commments..
-            // res.write("<h1>Temperature in " + name + " is " + temp + " degrees</h1>")
-            // res.write("<p>Weather desciption is " + weatherdesc + ".</p>")
-            // res.write("<img src = " + imageurl + ">")
-            // res.send();
+            res.write("<h1>Temperature in " + name + " is " + temp + " degrees</h1>")
+            res.write("<p>Weather desciption is " + weatherdesc + ".</p>")
+            res.write("<img src = " + imageurl + ">")
+            res.send();
         })
     })
 });
