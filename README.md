@@ -1,7 +1,7 @@
 # Pixels Weather
-## https://afternoon-citadel-01298.herokuapp.com/
+## https://web-production-9536.up.railway.app
 
 💻 Tech-stack : Node.js Express EJS Javascript 
 
-Hosted on heroku, uses Mailchimp for newsletter service
+Hosted on Railway, uses Mailchimp for newsletter service
 
