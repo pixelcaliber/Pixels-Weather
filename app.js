@@ -59,7 +59,17 @@ app.post("/signup", function (req, res) {
 
     request.end();
 })
+     class Person  {
+        constructor(name){
+            this.name = name;
+        }
+     }
+     class Student extends Person{
+        
+     }
 
+
+    
 //newsletter..
 
 app.post('/', function (req, res){
